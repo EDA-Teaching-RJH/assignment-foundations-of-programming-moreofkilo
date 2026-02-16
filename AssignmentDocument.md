@@ -39,21 +39,17 @@ https://docs.python.org/3/tutorial/datastructures.html
 
 ```python
 
-n = ["Picard", "Riker", "Data", "Worf"]
-r = ["Captain", "Commander", "Lt. Commander", "Lieutenant"]
-d = ["Command", "Command", "Operations", "Security"]
-
-active = True
-
-def run_system_monolith():
-    print("BOOTING SYSTEM...")
     print("...")
     print("WELCOME TO FLEET COMMAND")
     
+    n = []
+    r = []
+    d = []
     
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
+        loading += 1
         
     
     while True:
@@ -66,10 +62,10 @@ def run_system_monolith():
         
         opt = input("Select option: ")
         
-        if opt = "1":  
+        if opt == "1":  
             print("Current Crew List:")
             
-            for i in range(10):
+            for i in range(len(n)):
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
@@ -79,6 +75,8 @@ def run_system_monolith():
             
            
             n.append(new_name)
+            r.append(new_rank)
+            d.append(new_div)
             print("Crew member added.")
             
         elif opt == "3":
@@ -95,9 +93,9 @@ def run_system_monolith():
             count = 0
             
             for rank in r:
-                if rank == "Captain" or "Commander": 
+                if rank == "Captain" or rank == "Commander": 
                     count = count + 1
-            print("High ranking officers: " + count) 
+            print("High ranking officers: " + str(count)) 
             
         elif opt == "5":
             print("Shutting down.")
@@ -214,7 +212,7 @@ Full Implementation = **4 Marks**
 	   -   Counts how many "Captain" and "Commander" ranks exist and returns the integer.
 
 ```
-🔴🔴🔴 YOU MUST COMMIT EVERYTIME YOU ADD A FEATURE  🔴🔴🔴
+🔴🔴 YOU MUST COMMIT EVERYTIME YOU ADD A FEATURE  🔴🔴
 ```
 
 ## Part C: The Development Report (25 Marks)
