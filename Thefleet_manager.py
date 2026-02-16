@@ -1,12 +1,17 @@
-def filter_by_division(names, divs):
-    print("\n-- Division Filter --")
-    choice = input("Division: ")
+def calculate_payroll(ranks):
+    pay = {
+        "Admiral": 1500,
+        "Captain": 1000,
+        "Commander": 800,
+        "Lieutenant Commander": 600,
+        "Lieutenant": 400,
+        "Ensign": 200
+    }
 
-    found = False
-    for i in range(len(names)):
-        if divs[i].lower() == choice.lower():
-            print(names[i], "-", divs[i])
-            found = True
+    total_cost = 0
 
-    if not found:
-        print("No crew in that division.")
+    for r in ranks:
+        if r in pay:
+            total_cost += pay[r]
+
+    return total_cost
