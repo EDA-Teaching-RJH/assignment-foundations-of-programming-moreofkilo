@@ -1,12 +1,12 @@
-def search_crew(names, ranks, divs, ids):
-    print("\n-- Crew Search --")
-    term = input("Search name: ").lower()
-    hit = False
+def filter_by_division(names, divs):
+    print("\n-- Division Filter --")
+    choice = input("Division: ")
 
+    found = False
     for i in range(len(names)):
-        if term in names[i].lower():
-            print(ids[i], "|", names[i], "|", ranks[i], "|", divs[i])
-            hit = True
+        if divs[i].lower() == choice.lower():
+            print(names[i], "-", divs[i])
+            found = True
 
-    if not hit:
-        print("No results found.")
+    if not found:
+        print("No crew in that division.")
