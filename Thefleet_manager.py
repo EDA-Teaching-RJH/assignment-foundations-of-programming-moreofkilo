@@ -1,13 +1,15 @@
 # ---------------------------------
-def update_rank(names, ranks, ids):
-    print("\n-- Rank Update --")
-    target = input("Enter ID: ").upper()
+def display_roster(names, ranks, divs, ids):
+    print("\n========= CREW ROSTER =========")
 
-    if target in ids:
-        pos = ids.index(target)
-        print("Current:", names[pos], "-", ranks[pos])
-        new_rank = input("New Rank: ")
-        ranks[pos] = new_rank
-        print("Rank updated successfully.")
-    else:
-        print("No matching ID found.")
+    if len(names) == 0:
+        print("No crew recorded.")
+        return
+
+    header = f"{'ID':<8}{'NAME':<25}{'RANK':<22}{'DIVISION':<15}"
+    print(header)
+    print("-" * len(header))
+
+    for i in range(len(names)):
+        line = f"{ids[i]:<8}{names[i]:<25}{ranks[i]:<22}{divs[i]:<15}"
+        print(line)
