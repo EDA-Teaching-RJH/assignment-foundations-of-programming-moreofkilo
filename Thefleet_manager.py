@@ -1,16 +1,30 @@
-def display_menu():
-    user = input("\nEnter officer name: ")
+def add_member(names, ranks, divs, ids):
+    print("\n-- Add New Crew --")
 
-    print("\n========== FLEET CONTROL ==========")
-    print("Active Officer:", user)
-    print("1 - Add Crew Member")
-    print("2 - Remove Crew Member")
-    print("3 - Update Rank")
-    print("4 - Show Roster")
-    print("5 - Search Crew")
-    print("6 - Division Filter")
-    print("7 - Payroll Total")
-    print("8 - Officer Count")
-    print("9 - Exit Program")
+    new_id = input("Assign ID: ").upper()
 
-    return input("Select option: ")
+    if new_id in ids:
+        print("ERROR: ID already exists.")
+        return
+
+    valid_ranks = [
+        "Captain", "Commander",
+        "Lieutenant Commander",
+        "Lieutenant", "Ensign", "Admiral"
+    ]
+
+    new_rank = input("Rank: ")
+
+    if new_rank not in valid_ranks:
+        print("ERROR: Invalid Starfleet rank.")
+        return
+
+    new_name = input("Name: ")
+    new_div = input("Division: ")
+
+    names.append(new_name)
+    ranks.append(new_rank)
+    divs.append(new_div)
+    ids.append(new_id)
+
+    print("Crew member successfully added.")
