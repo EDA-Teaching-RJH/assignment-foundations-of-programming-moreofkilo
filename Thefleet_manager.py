@@ -1,28 +1,16 @@
-def init_database():
-    crew_names = [
-        "Jean-Luc Picard",
-        "William Riker",
-        "Geordi La Forge",
-        "Data",
-        "Deanna Troi"
-    ]
+def display_menu():
+    user = input("\nEnter officer name: ")
 
-    crew_ranks = [
-        "Captain",
-        "Commander",
-        "Lieutenant",
-        "Lieutenant Commander",
-        "Commander"
-    ]
+    print("\n========== FLEET CONTROL ==========")
+    print("Active Officer:", user)
+    print("1 - Add Crew Member")
+    print("2 - Remove Crew Member")
+    print("3 - Update Rank")
+    print("4 - Show Roster")
+    print("5 - Search Crew")
+    print("6 - Division Filter")
+    print("7 - Payroll Total")
+    print("8 - Officer Count")
+    print("9 - Exit Program")
 
-    crew_divs = [
-        "Command",
-        "Command",
-        "Operations",
-        "Operations",
-        "Sciences"
-    ]
-
-    crew_ids = ["NCC01", "NCC02", "NCC03", "NCC04", "NCC05"]
-
-    return crew_names, crew_ranks, crew_divs, crew_ids
+    return input("Select option: ")
